@@ -95,7 +95,7 @@ const atualizarUsuario = async (req, res) => {
             return res.status(400).json({ "mensagem": "Não foi possível realizar atualização de usuário." });
         }
 
-        return res.status(204).json();
+        return res.status(204).json('ok');
 
     } catch (error) {
         return res.status(500).json(error.message);
