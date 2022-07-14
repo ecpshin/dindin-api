@@ -117,7 +117,7 @@ const cadastrarTransacao = async (req, res) => {
 }
 
 const atualizarTransacao = async (req, res) => {
-    console.log(req);
+
     const { id } = req.params;
     const { tipo, descricao, valor, data, categoria_id } = req.body;
 
