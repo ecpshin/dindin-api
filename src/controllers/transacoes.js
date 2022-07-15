@@ -6,6 +6,7 @@ const listarTransacoes = async (req, res) => {
 
     const { filtro } = req.query;
 
+
     if (!usuario) return res.status(401).json({ "mensagem": "Para acessar este recurso um token de autenticação válido deve ser enviado." })
 
     try {
@@ -20,13 +21,15 @@ const listarTransacoes = async (req, res) => {
 
         let resultFitro = [];
 
+        // -------- EXTRA ---------------
+
         if (filtro) {
             filtro.forEach(categoria => {
                 transacao.forEach(item => {
                     if (item.categoria_nome.toLowerCase() === categoria.toLowerCase()) {
                         resultFitro.push(item);
                     }
-                })
+                });
             });
             return res.status(200).json(resultFitro);
         }
