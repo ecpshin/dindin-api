@@ -7,4 +7,4 @@ app.use(cors());
 app.use(express.json());
 app.use(rotas);
 
-app.listen(proccess.env.PORT || 3334);
+app.listen(process.env.PORT || 3334);
